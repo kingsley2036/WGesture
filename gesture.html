@@ -5,64 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>移动端手势库</title>
-    <script src="./gesture.js"></script>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
-            position: relative;
-            margin-top: 15%;
-
-        }
-
-        .touch {
-
-            border: 1px solid red;
-
-            position: relative;
-            width: 200px;
-
-        }
-    </style>
 
 </head>
 
 <body>
-    <div class="touch">我是测试案例,我是手势库
-        我是测试案例,我是手势库
-        我是测试案例,我是手势库
-        我是测试案例,我是手势库
-    </div>
-    <div class="test"> 我是测试案例,我是手势库
-        我是测试案例,我是手势库
-        我是测试案例,我是手势库</div>
+    <div class="touch">我是测试案例,我是手势库</div>
+    <!-- <div class="touch">xxxx</div> -->
     <!-- <button onclick="removelistener()">关闭监听器</button> -->
+ 
+    
 
-
-
-    <script>
-        // import WGesture from './gesture.js'
-
+    <script type="module">
+        import WGesture from './gesture.js'
         WGesture.on("doubleTap", ".touch", function () {
             console.log("doubleTap");
         });
         WGesture.on("swipe", ".touch", function () {
             console.log("swipe");
         });
-        let longTapcb = function () {
-            console.log("longTap")
-        }
-        let newGestures = WGesture.on("longTap", ".test", longTapcb);
-       
-        WGesture.off(newGestures,"longTap",longTapcb)
-       
-
+        WGesture.on("longTap", ".touch", function () {
+            console.log("longTap");
+        });  
     </script>
 
 
-
+   
 </body>
 
 </html>
