@@ -158,32 +158,7 @@ class Gesture {
     }
 }
 
-const WGesture = (() => {
-    let newGestures;
-    const on = (type, selectors, handler) => {
-        newGestures = [...document.querySelectorAll(selectors)].map((node) => {
-            return new Gesture(node);
-        });
-        newGestures.forEach((gesture) => {
-            gesture.on(type, handler);
-        });
-    };
-    const off = (type, handler) => {
-        newGestures.forEach((gesture) => {
-            gesture.off(type, handler);
-        });
-    };
-    const remove=()=>{
-         newGestures.forEach((gesture) => {
-            gesture.remove();
-        });
-    }
-    return {
-        on,
-        off,
-        remove
-    };
-})();
+
 export default WGesture;
 
 
