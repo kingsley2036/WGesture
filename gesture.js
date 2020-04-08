@@ -52,7 +52,7 @@ class Gesture {
               
                 this.dispatch("touchend", evt);
                 this.interval=Date.now()-this.now;
-                console.log([this.x1,this.y1],[this.x2,this.y2])
+              
                 if(this.interval> 1000 && (!this.x2 || Math.abs(this.x1 - this.x2) < 30)&&( !this.y2|| Math.abs(this.y1 - this.y2) < 30)){
                     this.dispatch("longTap", evt);
                     this.clearMoveInfo();
@@ -167,8 +167,9 @@ const WGesture = (() => {
         newGestures.forEach((gesture) => {
             gesture.on(type, handler);
         });
+        return newGestures;
     };
-    const off = (type, handler) => {
+    const off = (newGestures,type, handler) => {
         newGestures.forEach((gesture) => {
             gesture.off(type, handler);
         });
@@ -184,7 +185,7 @@ const WGesture = (() => {
         remove
     };
 })();
-export default WGesture;
+// export default WGesture;
 
 
 
