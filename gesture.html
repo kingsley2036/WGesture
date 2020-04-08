@@ -11,7 +11,7 @@
 
 <body>
     <div class="touch">我是测试案例,我是手势库</div>
-    <!-- <div class="touch">xxxx</div> -->
+    <div class="test">xxxx</div>
     <!-- <button onclick="removelistener()">关闭监听器</button> -->
  
     
@@ -24,9 +24,12 @@
         WGesture.on("swipe", ".touch", function () {
             console.log("swipe");
         });
-        WGesture.on("longTap", ".touch", function () {
+        let longTapcb=function () {
             console.log("longTap");
-        });  
+        }
+        let newGestures=WGesture.on("longTap", ".test",longTapcb );
+        WGesture.off(newGestures,"longTap",longTapcb)
+
     </script>
 
 

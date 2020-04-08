@@ -185,7 +185,7 @@ const WGesture = (() => {
         remove
     };
 })();
-// export default WGesture;
+export default WGesture;
 
 
 
