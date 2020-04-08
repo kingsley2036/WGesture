@@ -2,8 +2,9 @@
 使用原生JavaScript实现的一套移动端手势库，支持 tap、swipe、doubletap、longtap手势,后续会添加缩放和旋转手势.
 ### 使用方法
 ```
-import WGesture from './gesture.js'
+import WGesture from 'WGesture.js'
 ```
+
 ### 添加手势
 ```
 WGesture.on(type,selectors,handler)
